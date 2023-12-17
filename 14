@@ -1,0 +1,31 @@
+// Se empieza definiendo las entradas y salidas en el void setup.
+//en el voidloop se hara el codigo el cual consiste en que si el 
+//pulsador en la entrada 10 esta activo se apagara todo el sistema
+//
+void setup()
+{
+  pinMode(10, INPUT);
+  pinMode(13, OUTPUT);
+  pinMode(12, OUTPUT);
+  pinMode(11, OUTPUT);
+}
+
+void loop()
+{
+  if (digitalRead(10) == HIGH) {
+    digitalWrite(13, LOW);
+    digitalWrite(12, LOW);
+    digitalWrite(11, LOW);
+  } else {
+    digitalWrite(13, HIGH);
+    delay(10000);
+    digitalWrite(13, LOW);
+    delay(4000);
+    digitalWrite(12, HIGH);
+    digitalWrite(11, HIGH);
+    delay(10000);
+    digitalWrite(12, LOW);
+    digitalWrite(11, LOW);
+    delay(4000); 
+  }
+}
